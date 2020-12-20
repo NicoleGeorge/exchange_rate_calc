@@ -12,7 +12,14 @@ function calculate() {
   const currency_one = currencyEl_one.value;
   const currency_two = currencyEl_two.value;
 
-  console.log(currency_one, currency_two);
+  //   console.log(currency_one, currency_two);
+
+  fetch(
+    `https://v6.exchangerate-api.com/v6/e41b1edc60d38faa51c543fb/latest/${currency_one}`
+  ).then(res => res.json())
+  .then(data => {
+      console.log(data)
+  });
 }
 
 // Event Listeners
