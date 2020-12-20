@@ -16,10 +16,14 @@ function calculate() {
 
   fetch(
     `https://v6.exchangerate-api.com/v6/e41b1edc60d38faa51c543fb/latest/${currency_one}`
-  ).then(res => res.json())
-  .then(data => {
-      console.log(data)
-  });
+  )
+    .then((res) => res.json())
+    .then((data) => {
+        // console.log(data)
+      const rate = data.conversion_rates[currency_two];
+
+      console.log(rate);
+    });
 }
 
 // Event Listeners
